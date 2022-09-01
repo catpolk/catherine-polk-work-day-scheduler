@@ -1,16 +1,44 @@
-
+//using moment.js to disply day of the week and day of the month 
 var today = moment();
-$("#currentDay").text(today.format("MMM Do, YYYY"));
+$("#currentDay").text(today.format("dddd, MMM Do, YYYY"));
 
-var dayWeek = today.format("dddd")
-$("#weekDay").text(dayWeek);
+// $("#currentHour").text(today.format('H'));
 
-var curDayofMonth = document.getElementById('currentDay');
-var curDayofWeek = document.getElementById('weekDay');
 
-document.textContent = curDayofMonth + curDayofWeek;
-var titleEl = $('<p>');
+function hourUpdater() {
+    var currHour = moment().hours();
+    $("#currentHour").text(today.format('H'));
 
-//Day.js
-// dayjs().hour() // gets current hour
-// newDate = dayjs().hour(12) // returns new dayjs object
+    $('.time-block').each(function () {
+        var timeBlockHour = parseInt($(this).attr('id'));
+
+        if (timeBlockHour < currHour) {
+            $(this).addClass('past');
+        } else if (timeBlockHour === currHour) {
+            $(this).removeClass('past');
+            $(this).addClass('present');
+        } else {
+            $(this).removeClass('past');
+            $(this).removeClass('present');
+            $(this).addClass('future');
+        }
+
+    });
+}
+
+hourUpdater(); 
+
+$('.saveBtn').on("click", function() {
+    let value = $(this).siblings('textarea').val();
+    let key = $(this).parent().attr('id');
+    if(value === ""){
+        alert("Empty");
+        return;
+    }
+    localStorage.setItem(key, value);
+})
+
+$('.time-block').each(function () {
+
+
+
