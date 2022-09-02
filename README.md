@@ -1,21 +1,10 @@
 *catherine-polk-work-day-scheduler
 
+- My motivation was to create a project that allows to save events in a particular time block - regular working hours (9am - 5pm).
+- My motivation was to create a color coded time blocks for regular working hours.
+- I built this project to create a usable work day planner for busy people that can help them plan their day. 
+- This project allows to follow an important scheduling for working people. Also it allows to see the day structure due to color coding. 
+- I learned moment.js, bootstrap, jquery, and font awesome. 
+- My project stands out due to its usability and effectiveness; it is very intuitive and easy to use. 
 
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
 
-
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with time blocks for standard business hours
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-WHEN I click into a time block
-THEN I can enter an event
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
